@@ -80,7 +80,9 @@ public class ZoneToBuildTrigger : MonoBehaviour
             if (_boxesToBuild == 0)
             {
                 EndBuild();
-                StopCoroutine(_coroutine);
+                if (_coroutine != null)
+                    StopCoroutine(_coroutine);
+
                 yield return null;
             }
 
